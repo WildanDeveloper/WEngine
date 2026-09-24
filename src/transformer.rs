@@ -10,7 +10,7 @@ pub struct WildandevConfig {
     pub seq_len: usize,
 }
 
-// ====================================================================
+
 // ElisTransformer - wildandef CPU-optimized LLM engine
 //
 // Optimizations:
@@ -19,27 +19,27 @@ pub struct WildandevConfig {
 // 3. AVX-512 fused RMSNorm + SwiGLU (C++)
 // 4. Transposed-B layout for GEMM (dot-product friendly)
 // 5. In-place residual adds
-// ====================================================================
+
 
 pub struct ElisTransformer {
     pub cfg: WildandevConfig,
 
-    // Params
-    token_emb: Vec<f32>,
-    pos_emb: Vec<f32>,
-    w_q: Vec<Vec<f32>>,
-    w_k: Vec<Vec<f32>>,
-    w_v: Vec<Vec<f32>>,
-    w_o: Vec<Vec<f32>>,
-    norm1_g: Vec<Vec<f32>>,
-    norm2_g: Vec<Vec<f32>>,
-    w_gate: Vec<Vec<f32>>,
-    w_up: Vec<Vec<f32>>,
-    w_down: Vec<Vec<f32>>,
-    lm_head: Vec<f32>,
+    // Params (pub for trainer access)
+    pub token_emb: Vec<f32>,
+    pub pos_emb: Vec<f32>,
+    pub w_q: Vec<Vec<f32>>,
+    pub w_k: Vec<Vec<f32>>,
+    pub w_v: Vec<Vec<f32>>,
+    pub w_o: Vec<Vec<f32>>,
+    pub norm1_g: Vec<Vec<f32>>,
+    pub norm2_g: Vec<Vec<f32>>,
+    pub w_gate: Vec<Vec<f32>>,
+    pub w_up: Vec<Vec<f32>>,
+    pub w_down: Vec<Vec<f32>>,
+    pub lm_head: Vec<f32>,
 
     // Pre-allocated scratch buffers (reused every forward, zero alloc)
-    buf_x: Vec<f32>,
+    pub buf_x: Vec<f32>,
     buf_norm: Vec<f32>,
     buf_q: Vec<f32>,
     buf_k: Vec<f32>,

@@ -10,3 +10,4 @@ native/*.o
 
 # OS
 .DS_Store
+elis_checkpoint.bin

@@ -2,9 +2,9 @@ use std::time::Instant;
 use wildandev_core::{ElisTransformer, WildandevConfig};
 
 fn main() {
-    println!("============================================================");
+    
     println!("   WEngine: Elis-15M Scale-Up Benchmark (AVX-512 + 4 Cores)");
-    println!("============================================================");
+    
 
     // Elis-15M: d_model=512, 8 heads, 6 layers, d_ff=1024, seq_len=64
     let cfg = WildandevConfig {

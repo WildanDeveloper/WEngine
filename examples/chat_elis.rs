@@ -1,9 +1,9 @@
 use wildandev_core::{ElisTransformer, WildandevConfig};
 
 fn main() {
-    println!("============================================================");
+    
     println!("     WEngine - wildandev Elis AI Text Generator");
-    println!("============================================================");
+    
 
     let cfg = WildandevConfig {
         vocab_size: 256,
