@@ -131,7 +131,7 @@ impl ElisTransformer {
     }
 
     #[inline]
-    fn embed_tokens(&mut self, tokens: &[usize]) {
+    pub fn embed_tokens(&mut self, tokens: &[usize]) {
         let d = self.cfg.d_model;
         for (i, &t) in tokens.iter().enumerate() {
             let te_start = t * d;
