@@ -1,0 +1,8 @@
+[package]
+name = "wildandev_core"
+version = "0.1.0"
+edition = "2021"
+authors = ["wildandev"]
+description = "Elis AI Engine Core by Wildandev"
+
+[dependencies]

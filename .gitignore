@@ -1,0 +1,12 @@
+# Build artifacts
+/target/
+native/*.so
+native/*.o
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
